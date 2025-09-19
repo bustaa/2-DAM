@@ -1,4 +1,5 @@
 package Ejercicios_T1;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ej13 {
@@ -9,7 +10,8 @@ public class Ej13 {
         System.out.print("Ingrese la temperatura (cº): ");
         tCent = sc.nextDouble();
         tFahr = (tCent * 9 / 5) + 32;
+        DecimalFormat nFormat = new DecimalFormat("#.00");
 
-        System.out.println("Temperatura en Fahrenheit (ºF): " + tFahr);
+        System.out.println("Temperatura en Fahrenheit (ºF): " + nFormat.format(tFahr));
     }
 }
