@@ -86,12 +86,7 @@ const users = [
         password: "Dean_hashed_password"
     }]
 
-const resUsers = users.reduce((obj, elem) => {
-    obj.push(elem.email);
-    obj.push(elem.website);
-    obj[phone];
-    return obj;
-}, {})
+const resUsers = users.map(({ email, website, phone }) => ({ email, website, phone}))
 
 console.log(resUsers);
 
@@ -178,5 +173,9 @@ let comandes = [
 //     ]
 // ]
 
+let resComandes = comandes.map(comanda => {
+    return comanda.productes.map(producte => { return {client: comanda.client.nom, productes: producte.nom}})
+})
 
+console.log(resComandes);
 
