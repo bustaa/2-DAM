@@ -3,7 +3,7 @@ package Ejercicios_T1;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Ej22 {
+public class Ej23 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<String> personas = new ArrayList<String>();
@@ -15,5 +15,8 @@ public class Ej22 {
             if (!nombrePersona.equals("0")) personas.add(nombrePersona);
         } while (!nombrePersona.equals("0"));
 
+        for (int i = 0; i < personas.size(); i++) {
+            System.out.println((i + 1) + ". " + personas.get(i));
+        }
     }
 }
