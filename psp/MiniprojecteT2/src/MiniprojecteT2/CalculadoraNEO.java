@@ -16,8 +16,7 @@ public class CalculadoraNEO {
         double posicioTerra = 1;
         double velocitatTerra = 100;
 
-        // Simulación (simplificada para evitar cálculos desmesurados)
-        for (int i = 0; i < (50 * 365 * 24); i++) { // menos iteraciones que el enunciado real
+        for (int i = 0; i < (50 * 365 * 24); i++) {
             posicioNEO = posicioNEO + velocitatNEO * i;
             posicioTerra = posicioTerra + velocitatTerra * i;
         }
@@ -25,7 +24,6 @@ public class CalculadoraNEO {
         double resultat = 100 * Math.random() *
                 Math.pow(((posicioNEO - posicioTerra) / (posicioNEO + posicioTerra)), 2);
 
-        // Guardar resultado en fichero
         File file = new File("./" + nombre + ".txt");
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
             bw.write(String.format("%.2f", resultat));
@@ -33,7 +31,6 @@ public class CalculadoraNEO {
             System.err.println("Error escribiendo el fichero de " + nombre);
         }
 
-        // Mostrar mensajes
         System.out.printf("Probabilidad de colisión de %s: %.2f%%%n", nombre, resultat);
         if (resultat > 10.0) {
             System.err.println("⚠ ALERTA MUNDIAL: " + nombre + " supera el 10% de probabilidad!");
